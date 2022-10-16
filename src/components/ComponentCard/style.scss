@@ -1,0 +1,10 @@
+.component-card {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  text-align: center;
+  padding: 4px;
+  margin-bottom: 10px;
+  &.is-dragging {
+    border-style: dashed;
+  }
+}
