@@ -2,4 +2,8 @@
   min-height: 50px;
   border: 1px solid #ccc;
   background-color: #f5f5f5;
+  &.is-dragging {
+    border-color: rgba(54, 162, 215, 0.5);
+    background-color: rgba(54, 162, 215, 0.15);
+  }
 }
