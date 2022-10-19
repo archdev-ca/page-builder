@@ -3,22 +3,16 @@ import { useDrag } from "react-dnd";
 import "./style.scss";
 
 type ComponentCardProps = {
-  setIsDragging: Function;
   children: React.ReactNode;
   type: string;
 };
 
-const ComponentCard = ({
-  setIsDragging,
-  type,
-  children,
-}: ComponentCardProps) => {
+const ComponentCard = ({ type, children }: ComponentCardProps) => {
   const [{ isDragging }, dragRef] = useDrag(
     () => ({
       type: "card",
       item: { type },
       collect: (monitor) => {
-        setIsDragging(!!monitor.isDragging());
         return {
           isDragging: !!monitor.isDragging(),
         };

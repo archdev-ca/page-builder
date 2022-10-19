@@ -10,23 +10,21 @@ import "./style.scss";
 type BuilderProps = {};
 
 const Builder = ({}: BuilderProps) => {
-  const [isDragging, setIsDragging] = React.useState(false);
-  console.log("builder isdragging: ", isDragging);
   return (
     <Container fluid>
       <Row>
         <DndProvider backend={HTML5Backend}>
           <Col className="d-flex">
             <div className="sidebar py-4">
-              <ComponentCard setIsDragging={setIsDragging} type="nav">
+              <ComponentCard key={1} type="col">
                 Nav
               </ComponentCard>
-              <ComponentCard setIsDragging={setIsDragging} type="col">
+              <ComponentCard key={2} type="col">
                 Columns
               </ComponentCard>
             </div>
             <div className="main-col flex-grow">
-              <Droppable isDragging={isDragging}></Droppable>
+              <Droppable></Droppable>
             </div>
           </Col>
         </DndProvider>
