@@ -19,6 +19,8 @@ const Builder = ({}: BuilderProps) => {
     allIds: [0],
   });
 
+  const createComponentTree = () => {};
+
   return (
     <Container fluid>
       <Row>
