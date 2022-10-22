@@ -6,9 +6,10 @@ type DroppableProps = {
   idCounter: React.RefObject<number>;
   id: number;
   component?: React.ReactNode;
+  children?: React.ReactNode;
 };
 
-const Droppable = ({ id, idCounter }: DroppableProps) => {
+const Droppable = ({ children = null, id, idCounter }: DroppableProps) => {
   const handleDrop = (item: any, monitor: any) => {
     console.log("handleDrop: ", id);
     console.log("handleDrop: monitor", monitor.getDropResult());
@@ -28,7 +29,9 @@ const Droppable = ({ id, idCounter }: DroppableProps) => {
       className={`droppable d-flex ${canDrop && "is-dragging"}`}
       contentEditable="true"
       ref={dropRef}
-    ></div>
+    >
+      {children}
+    </div>
   );
 };
 
