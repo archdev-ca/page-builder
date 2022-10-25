@@ -26,8 +26,8 @@ const Droppable = ({ children = null, id, idCounter }: DroppableProps) => {
   }));
   return (
     <div
-      className={`droppable d-flex ${canDrop && "is-dragging"}`}
-      contentEditable="true"
+      className={`droppable d-flex flex-grow ${canDrop && "is-dragging"}`}
+      // contentEditable="true"
       ref={dropRef}
     >
       {children}
